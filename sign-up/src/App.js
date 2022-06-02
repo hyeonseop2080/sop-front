@@ -24,7 +24,7 @@ function App() {
           return alert('PW 와 PW 재확인이 일치하지 않습니다.');
       }
       console.log(Id + " " + Password + " " + ConfirmPassword + " " + Nickname);
-      axios.post('https://440b-219-255-158-172.jp.ngrok.io/members/sign-up',
+      axios.post('https://0f71-219-255-158-172.jp.ngrok.io/members/sign-up',
       {"loginId": Id,
       "loginPw": Password,
       "nickname": Nickname}). then(function(response){
@@ -36,11 +36,9 @@ function App() {
               setNickname("");
           }
           else{
-            alert("가입해주셔서 감사합니다!");
-            setId("");
-            setPassword("");
-            setConfirmPassword("");
-            setNickname("");
+            if(!alert("가입해주셔서 감사합니다!")){
+                document.location.href = "../../likely/bulid/index.html";
+            }
           }
       });
 
