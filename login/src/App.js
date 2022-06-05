@@ -13,19 +13,20 @@ function App() {
   const onSubmitHandler = (event) => {
       event.preventDefault();
       console.log(Id + " " + Password);
-      axios.post('https://0f71-219-255-158-172.jp.ngrok.io/members/login',
+      axios.post('https://35cf-219-255-158-172.jp.ngrok.io/members/login',
       {"loginId": Id,
         "loginPw": Password
-      }).then(function(response){
+      }, {withCredentials: true}).then(function(response){
+        console.log(sessionStorage.getItem("loginId"));
         if(response.data === false){
             alert("ID 나 PW가 틀렸습니다.");
             setId("");
             setPassword("");
         }
         else{
-            alert("정상적으로 로그인이 되었습니다.");
-            setId("");
-            setPassword("");
+            if(!alert("정상적으로 로그인이 되었습니다.")){
+                document.location.href = "../../main/build/index.html";
+            }
         }
       });
   };
