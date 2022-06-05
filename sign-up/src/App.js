@@ -28,6 +28,7 @@ function App() {
       {"loginId": Id,
       "loginPw": Password,
       "nickname": Nickname}, {withCredentials: true}). then(function(response){
+          console.log(response.data);
           if(response.data === false){
               alert("이미 존재하는 ID입니다.");
               setId("");
@@ -37,6 +38,7 @@ function App() {
           }
           else{
             if(!alert("가입해주셔서 감사합니다!")){
+                document.cookie = `JSESSIONID=${response.data}; Path=/; SameSite=None; Secure;`;
                 document.location.href = "../../likely/build/index.html";
             }
           }

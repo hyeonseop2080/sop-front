@@ -13,11 +13,14 @@ function App() {
   const onSubmitHandler = (event) => {
       event.preventDefault();
       console.log(Id + " " + Password);
+      var config = {
+        headers: { 'Content-Type': 'application/json',
+                  'Access-Control-Allow-Origin': 'https://35cf-219-255-158-172.jp.ngrok.io'}
+      };
       axios.post('https://35cf-219-255-158-172.jp.ngrok.io/members/login',
       {"loginId": Id,
         "loginPw": Password
-      }, {withCredentials: true}).then(function(response){
-        console.log(sessionStorage.getItem("loginId"));
+      }, config, {withCredentials: true}).then(function(response){
         if(response.data === false){
             alert("ID 나 PW가 틀렸습니다.");
             setId("");
@@ -25,7 +28,9 @@ function App() {
         }
         else{
             if(!alert("정상적으로 로그인이 되었습니다.")){
-                document.location.href = "../../main/build/index.html";
+                document.cookie = `JSESSIONID=${response.data}; Path=/;`;
+                console.log(response);
+                //document.location.href = "../../main/build/index.html";
             }
         }
       });

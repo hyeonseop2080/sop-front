@@ -23,7 +23,8 @@ function App() {
       result = result + "]";
       console.log(result);
       var config = {
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json',
+                  'Access-Control-Allow-Origin': 'https://35cf-219-255-158-172.jp.ngrok.io'}
       };
       axios.post('https://35cf-219-255-158-172.jp.ngrok.io/likes/survey/first', 
       result, config, {withCredentials: true}).then(function(response){
