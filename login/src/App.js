@@ -15,9 +15,9 @@ function App() {
       console.log(Id + " " + Password);
       var config = {
         headers: { 'Content-Type': 'application/json',
-                  'Access-Control-Allow-Origin': 'https://35cf-219-255-158-172.jp.ngrok.io'}
+                'loginId': document.cookie.slice(3)}
       };
-      axios.post('https://35cf-219-255-158-172.jp.ngrok.io/members/login',
+      axios.post('https://4bcf-219-255-158-172.jp.ngrok.io/members/login',
       {"loginId": Id,
         "loginPw": Password
       }, config, {withCredentials: true}).then(function(response){
@@ -28,9 +28,9 @@ function App() {
         }
         else{
             if(!alert("정상적으로 로그인이 되었습니다.")){
-                document.cookie = `JSESSIONID=${response.data}; Path=/;`;
+                document.cookie = `ID=${response.data}; Path=/;`;
                 console.log(response);
-                //document.location.href = "../../main/build/index.html";
+                document.location.href = "../../main/build/index.html";
             }
         }
       });

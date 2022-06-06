@@ -24,16 +24,16 @@ function App() {
       console.log(result);
       var config = {
         headers: { 'Content-Type': 'application/json',
-                  'Access-Control-Allow-Origin': 'https://35cf-219-255-158-172.jp.ngrok.io'}
+                'loginId': document.cookie.slice(3)}
       };
-      axios.post('https://35cf-219-255-158-172.jp.ngrok.io/likes/survey/first', 
+      axios.post('https://4bcf-219-255-158-172.jp.ngrok.io/likes/survey/first', 
       result, config, {withCredentials: true}).then(function(response){
         if(response.data === true){
           if(!alert("선호도 조사가 정상적으로 처리되었습니다.")){
               document.location.href = "../../login/build/index.html";
           }
         }
-      })
+      });
   };
   return (
     <div className="recommend">

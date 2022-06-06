@@ -24,11 +24,11 @@ function App() {
           return alert('PW 와 PW 재확인이 일치하지 않습니다.');
       }
       console.log(Id + " " + Password + " " + ConfirmPassword + " " + Nickname);
-      axios.post('https://35cf-219-255-158-172.jp.ngrok.io/members/sign-up',
+      var config = {headers: { 'Content-Type': 'application/json'}};
+      axios.post('https://4bcf-219-255-158-172.jp.ngrok.io/members/sign-up',
       {"loginId": Id,
       "loginPw": Password,
-      "nickname": Nickname}, {withCredentials: true}). then(function(response){
-          console.log(response.data);
+      "nickname": Nickname}, config, {withCredentials: true}). then(function(response){
           if(response.data === false){
               alert("이미 존재하는 ID입니다.");
               setId("");
@@ -38,7 +38,7 @@ function App() {
           }
           else{
             if(!alert("가입해주셔서 감사합니다!")){
-                document.cookie = `JSESSIONID=${response.data}; Path=/; SameSite=None; Secure;`;
+                document.cookie = `ID=${response.data}; Path=/;`;
                 document.location.href = "../../likely/build/index.html";
             }
           }
