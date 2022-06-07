@@ -8,7 +8,8 @@ function App() {
         headers: { 'Content-Type': 'application/json',
         'loginId': document.cookie.slice(3)}
     };
-    axios.get('https://4bcf-219-255-158-172.jp.ngrok.io/main', config, {withCredentials: true}).then(response => {
+    axios.get('https://4bcf-219-255-158-172.jp.ngrok.io/main',
+    config).then(response => {
         contents = response.data;
         len = response.data.length;
     }).then(response => {
@@ -66,7 +67,7 @@ function App() {
     const onAClick = (location) => {
         let wo = window.open(location, '팝업창','width=1000,height=800, top=100, left=500');
         wo.addEventListener('beforeunload', () => {
-            location.reload();
+            window.location.replace("../../main/build/index.html")
         });
     }
 

@@ -300,6 +300,26 @@
     align-items: center;
     margin-bottom: 30px;
 }
+.lcontainer .right-upper {
+    position: absolute;
+    top:0%;
+    bottom: 94%;
+    left: 76%;
+    text-decoration: none;
+    color: white;
+    font-family: abster;
+    font-size: 25px;
+}
+.lcontainer .right-upper2 {
+    position: absolute;
+    top:0%;
+    bottom: 94%;
+    left: 67%;
+    text-decoration: none;
+    color: white;
+    font-family: abster;
+    font-size: 25px;
+}
 .lcontainer .header h1 a{
     text-decoration: none;
     color: white;
@@ -448,8 +468,15 @@
     width: 100%;
     vertical-align: middle;
 }
+.lcontainer .all-recommend .contents {   
+    width: 100%;
+    vertical-align: middle;
+}
 
 .lcontainer .mrecommend .contents img{
+    width: 18%;
+}
+.lcontainer .all-recommend .contents img{
     width: 18%;
 }
 
@@ -462,10 +489,12 @@
     cursor: pointer;
 }
 
-.lcontainer .all-recommend .like_button2{
+
+
+.lcontainer .all-recommend .like_button{
     border : none;
     position: relative;
-    width: 30%;
+    width: 18%;
     left: 0;
     background-color: transparent;
     cursor: pointer;
@@ -509,4 +538,29 @@
     visibility: visible;
     opacity: 1;
     font-size: 20px;
+}
+
+.lcontainer .liked{
+    left: 0%;
+    top:40;
+    width: 80%;
+    height : 40%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.lcontainer .liked #contents-form {
+    left: 10%;
+    width: 100%;
+    vertical-align: middle;
+}
+.lcontainer .liked .contents {   
+    width: 100%;
+    vertical-align: middle;
+}
+
+.lcontainer .liked #contents-form img{
+    width: 20%;
 }

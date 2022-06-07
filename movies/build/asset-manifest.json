@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.9a1f2379.css",
-    "main.js": "./static/js/main.af647e5b.js",
+    "main.css": "./static/css/main.0932d8a7.css",
+    "main.js": "./static/js/main.e177191d.js",
     "static/media/room.jpg": "./static/media/room.fe8637ffd775a51a8de8.jpg",
     "static/media/abster-webfont.woff": "./static/media/abster-webfont.559514b67dd2557bda83.woff",
     "index.html": "./index.html",
-    "main.9a1f2379.css.map": "./static/css/main.9a1f2379.css.map",
-    "main.af647e5b.js.map": "./static/js/main.af647e5b.js.map"
+    "main.0932d8a7.css.map": "./static/css/main.0932d8a7.css.map",
+    "main.e177191d.js.map": "./static/js/main.e177191d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a1f2379.css",
-    "static/js/main.af647e5b.js"
+    "static/css/main.0932d8a7.css",
+    "static/js/main.e177191d.js"
   ]
 }
